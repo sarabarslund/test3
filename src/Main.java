@@ -3,7 +3,7 @@ public class Main {
 
         System.out.println("Hello world!");
         int a, b, c;
-        System.out.println("Kan emil?")
+        System.out.println("Kan emil?");
     }
 
 
