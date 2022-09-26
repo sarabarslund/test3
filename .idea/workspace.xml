@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="TestEmil">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/matadorgui_3_1_61.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/matadorgui_3_1_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/matadorgui_3_1_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/test3.iml" afterDir="false" />
-    </list>
+    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="TestEmil" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
