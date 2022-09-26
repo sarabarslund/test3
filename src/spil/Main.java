@@ -16,6 +16,7 @@ public class Main {
 
         // Sætter et loop op, som stopper hvis enten spiller 1 eller spiller 2 vinder
         while (true) {
+            long end3 = System.currentTimeMillis();
             // Gemmer forrige kast for at opfylde condition 3
             pdice1 = dice1;
             pdice2 = dice2;
@@ -89,6 +90,7 @@ public class Main {
             long end2 = System.currentTimeMillis();
             System.out.println("It took: " + (end - start) + " ms to show the dice on the board!");
             System.out.println("It took: " + (end2 - start) + " ms to throw the dice and finish all the checks");
+            System.out.println("It took: " + (end2 - end3) + " ms to throw the dice and finish all the checks");
             System.out.println("Player 1 currently has: " + player1 + " points. Player 2 currently have: " + player2 + " points");
         }
     }
