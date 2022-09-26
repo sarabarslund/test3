@@ -1,10 +1,9 @@
 package spil;
 
-import java.util.Scanner;
 import java.util.Random;
 import gui_main.GUI;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         // Indsætter værdier
         int dice1 = 0, dice2 = 0, pdice1, pdice2;
@@ -25,10 +24,10 @@ public class Main {
             System.out.println(turn + " " + turn % 2);
             if (turn % 2 == 0) {
                 System.out.println("Player 1 please roll the spil.dice, press 'ok'");
-                String testuser = gui.getUserString("Player 1 next");
-            } else if (turn % 2 != 0) {
+                gui.getUserString("Player 1 next");
+            } else {
                 System.out.println("Player 2 please roll the spil.dice, press 'ok'");
-                String testuser = gui.getUserString("Player 2 next");
+                gui.getUserString("Player 2 next");
             }
             // Laver to tilfældige tal mellem 1 og 6
             long start = System.currentTimeMillis();
@@ -68,7 +67,7 @@ public class Main {
                 }
             }
             // Condition 4 fra opg
-            else if (dice1 == dice2 && (player1 >= 40 || player2 >= 40)) {
+            else if (dice1 == dice2) {
                 if (player1 >= 40) {
                     System.out.println("Congrats, player 1 won!");
                     gui.close();

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum.">
+    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Små retteleser i long-commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
       <workItem from="1664150162819" duration="1415000" />
       <workItem from="1664153394020" duration="386000" />
       <workItem from="1664189277708" duration="32000" />
-      <workItem from="1664195778378" duration="532000" />
+      <workItem from="1664195778378" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum.">
       <created>1664150567670</created>
@@ -76,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664150567670</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Små retteleser i long-commands">
+      <created>1664196335992</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664196335992</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum." />
-    <option name="LAST_COMMIT_MESSAGE" value="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum." />
+    <MESSAGE value="Små retteleser i long-commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Små retteleser i long-commands" />
   </component>
 </project>
