@@ -6,17 +6,20 @@ import java.util.Scanner;
 import gui_main.GUI;
 
 class allPlayers {
+    private int playerCount(){
+        Scanner sc = new Scanner(System.in);
+        int playerCount = sc.nextInt();
+        sc.nextLine();
+        return playerCount;
+    }
     private String[] hiddenPlayers() {
         String usrInput;
         String[] players;
         Scanner sc = new Scanner(System.in);
 
-        int playerCount = sc.nextInt();
-        sc.nextLine();
+        players = new String[this.playerCount()];
 
-        players = new String[playerCount];
-
-        for (int i = 1; i <= playerCount; i++) {
+        for (int i = 1; i <= this.playerCount(); i++) {
 
             System.out.println("Enter name of player number: " + i + ".");
             usrInput = sc.nextLine();
@@ -27,6 +30,9 @@ class allPlayers {
     }
     public String[] players(){
         return this.hiddenPlayers();
+    }
+    public int playerTotal(){
+        return this.playerCount();
     }
 }
 class diceRolls {
@@ -41,7 +47,7 @@ class diceRolls {
         return this.HiddenDices();
     }
 }
-class
+
 
 public class Main {
     public static void main(String[] args) {
@@ -56,6 +62,5 @@ public class Main {
         System.out.println("Thank you, please proceed to the game:");
         GUI gui = new GUI();
         gui.showMessage("Player 1 press to start the game: ");
-
     }
 }
