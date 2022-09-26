@@ -6,7 +6,7 @@ import gui_main.GUI;
 class Main {
     public static void main(String[] args) {
         // Indsætter værdier
-        int dice1 = 0, dice2 = 0, pdice1, pdice2;
+        int dice1 = 0, dice2 = 0, p1dice1 = 0, p1dice2 = 0, p2dice1 = 0, p2dice2 = 0;
         int player1 = 0, player2 = 0;
         int turn = -1;
 
@@ -17,17 +17,20 @@ class Main {
         while (true) {
             long end3 = System.currentTimeMillis();
             // Gemmer forrige kast for at opfylde condition 3
-            pdice1 = dice1;
-            pdice2 = dice2;
+
             // Vælger hvilken spiller som skal slå terningen
             turn += 1;
             System.out.println(turn + " " + turn % 2);
             if (turn % 2 == 0) {
+                p1dice1 = dice1;
+                p1dice2 = dice2;
                 System.out.println("Player 1 please roll the spil.dice, press 'ok'");
-                gui.getUserString("Player 1 next");
+                gui.showMessage("Player 1 next");
             } else {
+                p2dice1 = dice1;
+                p2dice2 = dice2;
                 System.out.println("Player 2 please roll the spil.dice, press 'ok'");
-                gui.getUserString("Player 2 next");
+                gui.showMessage("Player 2 next");
             }
             // Laver to tilfældige tal mellem 1 og 6
             long start = System.currentTimeMillis();
@@ -38,12 +41,15 @@ class Main {
             System.out.println("Dice 1 roll: " + dice1 + ", spil.dice 2 roll: " + dice2 + ".");
             // indsætter parametre i prioriteret rækkefølge
             // Condition 3 fra opg
-            if (dice1 == 6 && dice2 == 6 && pdice1 == 6 && pdice2 == 6) {
+            // Hvis en spiller har fpet to 6'ere to gange i streg har spilleren vundet
+            if ((dice1 == 6 && dice2 == 6 && p1dice1 == 6 && p1dice2 == 6 && turn % 2 == 0 ) || (dice1 == 6 && dice2 == 6 && p2dice1 == 6 && p2dice2 == 6 && turn % 2 != 0 )) {
                 if (turn % 2 == 0) {
                     System.out.println("Congrats, player1 won!");
+                    gui.close();
                     break;
-                } else if (turn % 2 != 0) {
+                } else {
                     System.out.println("Congrats, player2 won!");
+                    gui.close();
                     break;
                 }
             }
@@ -52,17 +58,17 @@ class Main {
                 System.out.println("Sorry, you lost all your points :(");
                 if (turn % 2 == 0) {
                     player1 = 0;
-                } else if (turn % 2 != 0) {
+                } else {
                     player2 = 0;
                 }
             }
             // Condition 2 fra opg
-            else if (dice1 == dice2 && (player2 < 40 || player1 < 40)) {
+            else if (dice1 == dice2 && (turn % 2 == 0 && player1 < 40) || (turn % 2 != 0 && player2 < 40)) {
                 System.out.println("Congrats, you got an extra try!");
-                turn -= -1;
+                turn -= 1;
                 if (turn % 2 != 0) {
                     player1 += (dice1 + dice2);
-                } else if (turn % 2 == 0) {
+                } else {
                     player2 += (dice1 + dice2);
                 }
             }
@@ -72,7 +78,7 @@ class Main {
                     System.out.println("Congrats, player 1 won!");
                     gui.close();
                     break;
-                } else if (player2 >= 40) {
+                } else {
                     System.out.println("Congrats, player 2 won!");
                     gui.close();
                     break;
@@ -81,7 +87,7 @@ class Main {
             } else {
                 if (turn % 2 == 0) {
                     player1 += (dice1 + dice2);
-                } else if (turn % 2 != 0) {
+                } else {
                     player2 += (dice1 + dice2);
                 }
             }
