@@ -1,96 +1,61 @@
 package spil;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import gui_main.GUI;
 
-class Main {
-    public static void main(String[] args) {
-        // Indsætter værdier
-        int dice1 = 0, dice2 = 0, pdice1, pdice2;
-        int player1 = 0, player2 = 0;
-        int turn = -1;
+class allPlayers {
+    private String[] hiddenPlayers() {
+        String usrInput;
+        String[] players;
+        Scanner sc = new Scanner(System.in);
 
-        // Start GUI
-        GUI gui = new GUI();
+        int playerCount = sc.nextInt();
+        sc.nextLine();
 
-        // Sætter et loop op, som stopper hvis enten spiller 1 eller spiller 2 vinder
-        while (true) {
-            long end3 = System.currentTimeMillis();
-            // Gemmer forrige kast for at opfylde condition 3
-            pdice1 = dice1;
-            pdice2 = dice2;
-            // Vælger hvilken spiller som skal slå terningen
-            turn += 1;
-            System.out.println(turn + " " + turn % 2);
-            if (turn % 2 == 0) {
-                System.out.println("Player 1 please roll the spil.dice, press 'ok'");
-                gui.getUserString("Player 1 next");
-            } else {
-                System.out.println("Player 2 please roll the spil.dice, press 'ok'");
-                gui.getUserString("Player 2 next");
-            }
-            // Laver to tilfældige tal mellem 1 og 6
-            long start = System.currentTimeMillis();
-            dice1 = new Random().nextInt(1, 7);
-            dice2 = new Random().nextInt(1, 7);
-            gui.setDice(dice1, dice2);
-            long end = System.currentTimeMillis();
-            System.out.println("Dice 1 roll: " + dice1 + ", spil.dice 2 roll: " + dice2 + ".");
-            // indsætter parametre i prioriteret rækkefølge
-            // Condition 3 fra opg
-            if (dice1 == 6 && dice2 == 6 && pdice1 == 6 && pdice2 == 6) {
-                if (turn % 2 == 0) {
-                    System.out.println("Congrats, player1 won!");
-                    break;
-                } else if (turn % 2 != 0) {
-                    System.out.println("Congrats, player2 won!");
-                    break;
-                }
-            }
-            // Condition 1 fra opg
-            else if (dice1 == dice2 && dice1 + dice2 == 2) {
-                System.out.println("Sorry, you lost all your points :(");
-                if (turn % 2 == 0) {
-                    player1 = 0;
-                } else if (turn % 2 != 0) {
-                    player2 = 0;
-                }
-            }
-            // Condition 2 fra opg
-            else if (dice1 == dice2 && (player2 < 40 || player1 < 40)) {
-                System.out.println("Congrats, you got an extra try!");
-                turn -= -1;
-                if (turn % 2 != 0) {
-                    player1 += (dice1 + dice2);
-                } else if (turn % 2 == 0) {
-                    player2 += (dice1 + dice2);
-                }
-            }
-            // Condition 4 fra opg
-            else if (dice1 == dice2) {
-                if (player1 >= 40) {
-                    System.out.println("Congrats, player 1 won!");
-                    gui.close();
-                    break;
-                } else if (player2 >= 40) {
-                    System.out.println("Congrats, player 2 won!");
-                    gui.close();
-                    break;
-                }
-                // hvis ingen condition
-            } else {
-                if (turn % 2 == 0) {
-                    player1 += (dice1 + dice2);
-                } else if (turn % 2 != 0) {
-                    player2 += (dice1 + dice2);
-                }
-            }
-            //regnskab
-            long end2 = System.currentTimeMillis();
-            System.out.println("It took: " + (end - start) + " ms to show the dice on the board!");
-            System.out.println("It took: " + (end2 - start) + " ms to throw the dice and finish all the checks");
-            System.out.println("It took: " + (end2 - end3) + " ms to throw the dice and finish all the checks");
-            System.out.println("Player 1 currently has: " + player1 + " points. Player 2 currently have: " + player2 + " points");
+        players = new String[playerCount];
+
+        for (int i = 1; i <= playerCount; i++) {
+
+            System.out.println("Enter name of player number: " + i + ".");
+            usrInput = sc.nextLine();
+            players[i - 1] = usrInput;
+
         }
+        return players;
+    }
+    public String[] players(){
+        return this.hiddenPlayers();
+    }
+}
+class diceRolls {
+    private int[] HiddenDices() {
+        int dice1, dice2;
+        dice1 = new Random().nextInt(1, 7);
+        dice2 = new Random().nextInt(1, 7);
+        int[] dices = {dice1, dice2};
+        return dices;
+    }
+    public int[] dices(){
+        return this.HiddenDices();
+    }
+}
+class
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Hello, please enter the amount of players participating: ");
+        // Bruger en klasse til af definerer spillerne
+        allPlayers players = new allPlayers();
+        // Laver det om fra memmory kode til et array:
+        String[] names = players.players();
+        // Udskriver array, skal fjernes?
+        System.out.println(Arrays.toString(names));
+        System.out.println("Thank you, please proceed to the game:");
+        GUI gui = new GUI();
+        gui.showMessage("Player 1 press to start the game: ");
+
     }
 }

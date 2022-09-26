@@ -4,23 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Små retteleser i long-commands">
+    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="rettelser fra lærer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -64,26 +63,8 @@
       <updated>1663595806990</updated>
       <workItem from="1663595808182" duration="165000" />
       <workItem from="1664138215098" duration="17000" />
-      <workItem from="1664150162819" duration="1415000" />
-      <workItem from="1664153394020" duration="386000" />
-      <workItem from="1664189277708" duration="32000" />
-      <workItem from="1664195778378" duration="2642000" />
+      <workItem from="1664150162819" duration="145000" />
     </task>
-    <task id="LOCAL-00001" summary="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum.">
-      <created>1664150567670</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1664150567670</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Små retteleser i long-commands">
-      <created>1664196335992</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1664196335992</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,10 +80,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Første forsøg på terninger med GUI. Mangler tests og offentlige klasser som minimum." />
-    <MESSAGE value="Små retteleser i long-commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Små retteleser i long-commands" />
   </component>
 </project>
