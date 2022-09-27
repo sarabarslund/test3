@@ -3,7 +3,7 @@ package spil;
 import java.util.Random;
 import gui_main.GUI;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         // Indsætter værdier
         int dice1 = 0, dice2 = 0, p1dice1 = 0, p1dice2 = 0, p2dice1 = 0, p2dice2 = 0;
