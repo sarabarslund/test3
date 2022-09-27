@@ -9,7 +9,7 @@ public class Main {
         int dice1 = 0, dice2 = 0, p1dice1 = 0, p1dice2 = 0, p2dice1 = 0, p2dice2 = 0;
         int player1 = 0, player2 = 0;
         int turn = -1;
-
+        //
         // Start GUI
         GUI gui = new GUI();
 
