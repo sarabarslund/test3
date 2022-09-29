@@ -19,7 +19,7 @@ public class Main {
             // Gemmer forrige kast for at opfylde condition 3
 
             // Vælger hvilken spiller som skal slå terningen
-            turn += 1;
+            turn++;
             System.out.println(turn + " " + turn % 2);
             if (turn % 2 == 0) {
                 p1dice1 = dice1;
@@ -63,9 +63,9 @@ public class Main {
                 }
             }
             // Condition 2 fra opg
-            else if (dice1 == dice2 && (turn % 2 == 0 && player1 < 40) || (turn % 2 != 0 && player2 < 40)) {
+            else if (dice1 == dice2 && ((turn % 2 == 0 && player1 < 40) || (turn % 2 != 0 && player2 < 40))) {
                 System.out.println("Congrats, you got an extra try!");
-                turn -= 1;
+                turn--;
                 if (turn % 2 != 0) {
                     player1 += (dice1 + dice2);
                 } else {
