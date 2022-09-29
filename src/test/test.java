@@ -13,7 +13,7 @@ public class test {
             dice2 = new Random().nextInt(1, 7);
             sumOfRolls = dice1 + dice2; //Sums both rolls
             if (dice1==dice2){
-                count++;
+                count++; //Counts instances
             }
             for (int j = 2; j < (sides * 2) + 1; j++) { //Goes through all the possible values of sums of roll
                 if (sumOfRolls == j) { //Checks if sum of rolls is equal to the value presented by the for loop
