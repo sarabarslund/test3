@@ -49,11 +49,9 @@ class diceThrow {
         return dices;
     }
     public int[] pdice1(){
-        pdices1[turn] = dices[0];
         return pdices1;
     }
     public int[] pdice2(){
-         pdices2[turn] = this.dices[1];
         return pdices2;
     }
 
@@ -127,7 +125,6 @@ public class Main{
         sc.nextLine();
 
         diceThrow.setTurn(turn.currentTurn());
-        System.out.print(turn.currentTurn());
         // Setup the GUI
         GUI gui = new GUI();
         gui.showMessage(currentPlayers[turn.currentTurn()] + " press 'OK' to throw the dice");
@@ -151,23 +148,31 @@ public class Main{
                 break;
             }
             // extra-assignment 1
-            else if (dices[0] == dices[1] && diceThrow.getDices()[0] + diceThrow.getDices()[1] == 2){
+            else if (dices[0] == dices[1] && dices[0] + dices[1] == 2){
                 System.out.println("Sorry, you lost all of your points :(");
                 scoreBoard.score[turn.currentTurn()] = 0;
             }
             // extra-assignment 2
             else if (dices[0] == dices[1]){
                 System.out.println("Congrats, you got an extra turn!");
+                scoreBoard.score[turn.currentTurn()] = dices[0] + dices[1];
                 turn.setPrevTurn();
             }
             // primary assignment
             else {
-                scoreBoard.score[turn.currentTurn()] += diceThrow.getDices()[0] + diceThrow.getDices()[1];
+                scoreBoard.score[turn.currentTurn()] += dices[0] + dices[1];
             }
+            System.out.println(Arrays.toString(dices));
+            // Players and scoreboard
+            System.out.println(Arrays.toString(currentPlayers));
+            System.out.println(Arrays.toString(scoreBoard.score));
+            //Tests
+            System.out.println(Arrays.toString(diceThrow.pdice1()));
+            System.out.println(Arrays.toString(diceThrow.pdice2()));
             gui.showMessage(currentPlayers[turn.currentTurn()] + "'s dices on the board. Click ok for next player");
             diceThrow.setTurn(turn.currentTurn());diceThrow.setDices();turn.nextTurn();
             gui.setDice(dices[0],dices[1]);
-            System.out.println(Arrays.toString(dices));
+
 
         }
     }
