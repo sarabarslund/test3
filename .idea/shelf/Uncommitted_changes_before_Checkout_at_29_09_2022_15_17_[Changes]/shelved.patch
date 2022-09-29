@@ -1,0 +1,65 @@
+Index: src/spil/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package spil;\r\n\r\nimport java.util.Arrays;\r\nimport java.util.Random;\r\nimport java.util.Scanner;\r\n\r\n\r\nclass players {\r\n    private String usrInput;\r\n    private String[] players;\r\n    private Scanner sc = new Scanner(System.in);\r\n    public String[] playerNames(int playerCount) {\r\n\r\n        players = new String[playerCount];\r\n        for (int i = 1; i <= playerCount; i++) {\r\n\r\n            System.out.println(\"Enter name of player number: \" + i + \".\");\r\n            usrInput = sc.nextLine();\r\n            players[i - 1] = usrInput;\r\n        }\r\n        return players;\r\n    }\r\n}\r\nclass diceThrow {\r\n    int playerCount;\r\n    public void playerCount(int playerCount) {\r\n        this.playerCount = playerCount;\r\n    }\r\n\r\n    int dice1 = new Random().nextInt(1, 7);\r\n    int dice2 = new Random().nextInt(1, 7);\r\n    int dices = dice1 + dice2;\r\n\r\n}\r\nclass turn {\r\n    private int start = 0, normalTurn, playerCount;\r\n    public void playerCount(int playerCount){\r\n        this.playerCount = playerCount;\r\n    }\r\n    public int currentTurn(int turn) {\r\n        if (start == 0) {\r\n            start += 1;\r\n            normalTurn = new Random().nextInt(playerCount);\r\n            normalTurn += 1;\r\n        }\r\n        else {\r\n            normalTurn += turn;\r\n        }\r\n        return normalTurn;\r\n    }\r\n}\r\nclass gameRules {\r\n    private diceThrow dices = new diceThrow();\r\n    private int dice1 = dices.dice1;\r\n    private int dice2 = dices.dice1;\r\n    private int p1dice1, p1dice2, p2dice1, p2dice2;\r\n    String win = \"Player wins\";\r\n        }\r\n\r\npublic class Main{\r\n    public static void main(String[] args) {\r\n        // This section only launches the objects except for playerCount as it's used in mutiple objects\r\n        int playerCount;\r\n        diceThrow dc = new diceThrow();\r\n        System.out.println(dc.dices);\r\n        players player = new players();\r\n        Scanner sc = new Scanner(System.in);\r\n        playerCount = sc.nextInt();\r\n\r\n        String[] me = player.playerNames(playerCount);\r\n        System.out.println(Arrays.toString(me));\r\n\r\n        if (playerCount == 0) {\r\n            System.out.println(\"NO\");\r\n        }\r\n\r\n        turn tur = new turn();\r\n        tur.playerCount(playerCount);\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/spil/Main.java b/src/spil/Main.java
+--- a/src/spil/Main.java	(revision 3a1515c31a69c008c217efc3be99a6f3c28f4607)
++++ b/src/spil/Main.java	(date 1664455167158)
+@@ -79,4 +79,4 @@
+ 
+ 
+     }
+-}
+\ No newline at end of file
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"80b00dee-3ce2-4328-b671-16460d0673fc\" name=\"Changes\" comment=\"fucking aroundv2...\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/spil/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/spil/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/test/test.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/test.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2EzQCdK4vF7XtaJrjAlLwA7EGoj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Project.color&quot;: &quot;381e57&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/emils/Downloads/matadorgui-3.1.6.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;PLAIN_TEXT&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"80b00dee-3ce2-4328-b671-16460d0673fc\" name=\"Changes\" comment=\"\" />\r\n      <created>1663595806990</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1663595806990</updated>\r\n      <workItem from=\"1663595808182\" duration=\"165000\" />\r\n      <workItem from=\"1664138215098\" duration=\"17000\" />\r\n      <workItem from=\"1664150162819\" duration=\"145000\" />\r\n      <workItem from=\"1664229765116\" duration=\"25082000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"fucking around...\">\r\n      <created>1664225968485</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664225968485</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"fucking aroundv2...\">\r\n      <created>1664229685831</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1664229685831</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"fucking around...\" />\r\n    <MESSAGE value=\"fucking aroundv2...\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fucking aroundv2...\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3a1515c31a69c008c217efc3be99a6f3c28f4607)
++++ b/.idea/workspace.xml	(date 1664455092404)
+@@ -4,10 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="fucking aroundv2...">
++    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Classes and structure slowly formingv2">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -80,7 +79,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1664229685831</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Classes and structure slowly formingv2">
++      <created>1664435900848</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1664435900848</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -100,6 +106,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="fucking around..." />
+     <MESSAGE value="fucking aroundv2..." />
+-    <option name="LAST_COMMIT_MESSAGE" value="fucking aroundv2..." />
++    <MESSAGE value="Classes and structure slowly formingv2" />
++    <option name="LAST_COMMIT_MESSAGE" value="Classes and structure slowly formingv2" />
+   </component>
+ </project>
+\ No newline at end of file

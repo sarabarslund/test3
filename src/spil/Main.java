@@ -33,11 +33,16 @@ class diceThrow {
 
     private int[] dices = {new Random().nextInt(1, 7), new Random().nextInt(1,7)};
     private int[] pdices1 = new int[playerCount];
-    private int[] pdices2;
-
+    private int[] pdices2 = new int[playerCount];
+    void setpDices() {
+        this.pdices1 = new int[playerCount];
+        this.pdices2 = new int[playerCount];
+    }
     void setDices(){
         this.dices[0] = new Random().nextInt(1,7);
         this.dices[1] = new Random().nextInt(1,7);
+        pdices1[turn] = dices[0];
+        pdices2[turn] = dices[1];
     }
 
     public int[] getDices(){
@@ -112,7 +117,7 @@ public class Main{
         // Sets the number of players in relevant classes.
         String[] currentPlayers = players.playerNames(playerCount);
         turn.setPlayerCount(playerCount);
-        diceThrow.setPlayerCount(playerCount);
+        diceThrow.setPlayerCount(playerCount);diceThrow.setpDices();
         scoreBoard.score = new int[playerCount];
         // Choose player to start the game
         System.out.println("Thank you, scores will show up in console. Dices on gui.");
@@ -121,6 +126,8 @@ public class Main{
         sc.nextLine();
         sc.nextLine();
 
+        diceThrow.setTurn(turn.currentTurn());
+        System.out.print(turn.currentTurn());
         // Setup the GUI
         GUI gui = new GUI();
         gui.showMessage(currentPlayers[turn.currentTurn()] + " press 'OK' to throw the dice");
@@ -158,7 +165,7 @@ public class Main{
                 scoreBoard.score[turn.currentTurn()] += diceThrow.getDices()[0] + diceThrow.getDices()[1];
             }
             gui.showMessage(currentPlayers[turn.currentTurn()] + "'s dices on the board. Click ok for next player");
-            diceThrow.setTurn(turn.currentTurn());diceThrow.pdice1();diceThrow.pdice2();diceThrow.setDices();turn.nextTurn();
+            diceThrow.setTurn(turn.currentTurn());diceThrow.setDices();turn.nextTurn();
             gui.setDice(dices[0],dices[1]);
             System.out.println(Arrays.toString(dices));
 
