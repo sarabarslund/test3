@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Rettet class til public class">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022__16_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022__16_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022__16_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_09_2022__16_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="Lavet testen så den virker">
+      <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664225968485</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Lavet testen så den virker">
+      <created>1664449072559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449072559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fucking around..." />
-    <option name="LAST_COMMIT_MESSAGE" value="fucking around..." />
+    <MESSAGE value="Lavet testen så den virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lavet testen så den virker" />
   </component>
 </project>

@@ -25,12 +25,12 @@ public class Main {
                 p1dice1 = dice1;
                 p1dice2 = dice2;
                 System.out.println("Player 1 please roll the spil.dice, press 'ok'");
-                gui.showMessage("Player 1 next");
+                gui.showMessage("Player 1 now");
             } else {
                 p2dice1 = dice1;
                 p2dice2 = dice2;
                 System.out.println("Player 2 please roll the spil.dice, press 'ok'");
-                gui.showMessage("Player 2 next");
+                gui.showMessage("Player 2 now");
             }
             // Laver to tilfældige tal mellem 1 og 6
             long start = System.currentTimeMillis();
