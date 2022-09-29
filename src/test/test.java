@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 class mig {
     private String ThisClass = "9";
+
 }
 class turn {
     int start = 0, normalTurn;
@@ -33,7 +34,8 @@ public class test {
 
 
 
-
+        int[] pdice1 = {2,3,4};
+        pdice1[0] = 3;
         }
     }
 

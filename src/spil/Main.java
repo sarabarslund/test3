@@ -22,10 +22,16 @@ class players {
     }
 }
 class diceThrow {
+    int playerCount;
+    public void playerCount(int playerCount) {
+        this.playerCount = playerCount;
+    }
+
     int dice1 = new Random().nextInt(1, 7);
     int dice2 = new Random().nextInt(1, 7);
     int dices = dice1 + dice2;
-    }
+
+}
 class turn {
     private int start = 0, normalTurn, playerCount;
     public void playerCount(int playerCount){
@@ -49,14 +55,7 @@ class gameRules {
     private int dice2 = dices.dice1;
     private int p1dice1, p1dice2, p2dice1, p2dice2;
     String win = "Player wins";
-    public void getMainGame(int dice1,int dice2,int p1dice1,int p1dice2,int p2dice1,int p2dice2) {
-        int mainGame;
-        if (dice1 == 6 && dice2 == 6 && p1dice1 == 6 && p1dice2 == 6) {
-
-
         }
-    }
-}
 
 public class Main{
     public static void main(String[] args) {
