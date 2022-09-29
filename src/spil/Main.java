@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 import gui_main.GUI;
 
+// Saves player names
 class players {
     private String usrInput;
     private String[] players;
@@ -21,53 +22,49 @@ class players {
         return players;
     }
 }
+// Throws the dices
 class diceThrow {
-    private int playerCount;
-    private int turn;
+    private int playerCount, turn;
 
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
     }
     public void setTurn(int turn){ this.turn = turn; }
 
-    private int throwDice1 = new Random().nextInt(1, 7);
-    private int throwDice2 = new Random().nextInt(1, 7);
-    private int dices = throwDice1 + throwDice2;
-    private int[] pdice1 = new int[playerCount];
-    private int[] pdice2 = new int[playerCount];
-    private int dice1 = throwDice1, dice2 = throwDice2;
+    private int[] dices = {new Random().nextInt(1, 7), new Random().nextInt(1,7)};
+    private int[] pdices1 = new int[playerCount];
+    private int[] pdices2;
 
-    public int getThrowDice1(){
-        return throwDice1;
+    void setDices(){
+        this.dices[0] = new Random().nextInt(1,7);
+        this.dices[1] = new Random().nextInt(1,7);
     }
-    public int getThrowDice2(){
-        return throwDice2;
-    }
-    public int getDice1(){
-        return dice1;
-    }
-    public int getDice2(){
-        return dice2;
-    }
-    public int getDices(){
+
+    public int[] getDices(){
         return dices;
     }
     public int[] pdice1(){
-        pdice1[turn - 1] = throwDice1;
-        return pdice1;
+        pdices1[turn] = dices[0];
+        return pdices1;
     }
     public int[] pdice2(){
-        pdice2[turn - 1] = throwDice1;
-        return pdice2;
+         pdices2[turn] = this.dices[1];
+        return pdices2;
     }
 
 
 }
+// Chooses whom turn it is
 class turn {
-    private int start = -1, normalTurn, playerCount;
+    private int start = 0, normalTurn, playerCount;
     //
     public void setPrevTurn(){
-        this.normalTurn -= 1;
+        if (this.normalTurn - 1 < 0){
+            normalTurn = playerCount - 1;
+        }
+        else {
+            this.normalTurn -= 1;
+        }
     }
     public void setPlayerCount(int playerCount){
         this.playerCount = playerCount;
@@ -75,11 +72,14 @@ class turn {
     public int nextTurn() {
         if (start <= 0) {
             start += 1;
-            normalTurn = new Random().nextInt(playerCount);
+            normalTurn = new Random().nextInt(0, playerCount - 1);
             normalTurn += 1;
         }
         else {
             normalTurn += 1;
+        }
+        if (normalTurn > playerCount - 1){
+            normalTurn = 0;
         }
         return normalTurn;
     }
@@ -87,57 +87,81 @@ class turn {
         return normalTurn;
     }
 }
+// Saves scores
 class scoreBoard {
     String[] scoreBoard;
     int[] score;
 }
 
+
 public class Main{
 
     public static void main(String[] args) {
+
+        // Initiates other classes
         players players = new players();
         diceThrow diceThrow = new diceThrow();
         turn turn = new turn();
         Scanner sc = new Scanner(System.in);
         scoreBoard scoreBoard = new scoreBoard();
 
+        // Setting player count and names
         System.out.print("Welcome, please enter the amount of players at the table: ");
         int playerCount = sc.nextInt();
-        String[] currentPlayers = players.playerNames(playerCount);
-        diceThrow.setPlayerCount(playerCount);
 
+        // Sets the number of players in relevant classes.
+        String[] currentPlayers = players.playerNames(playerCount);
         turn.setPlayerCount(playerCount);
-        System.out.println("Thank you, scores will show up in console. Dices on screen.");
+        diceThrow.setPlayerCount(playerCount);
+        scoreBoard.score = new int[playerCount];
+        // Choose player to start the game
+        System.out.println("Thank you, scores will show up in console. Dices on gui.");
         System.out.println("Choosing random player as first player: ");
         System.out.println(currentPlayers[turn.currentTurn()] + " Starts the game. Press enter to launch game:");
         sc.nextLine();
+        sc.nextLine();
 
+        // Setup the GUI
         GUI gui = new GUI();
         gui.showMessage(currentPlayers[turn.currentTurn()] + " press 'OK' to throw the dice");
-        int[] dices = {diceThrow.getDice1(), diceThrow.getDice2()};
-        int[] pdices = new int[1];
+        // Throws the dices for the first time and saves pdices as a variable
+        diceThrow.setDices();
+        int[] dices = diceThrow.getDices();
+        int[] pdices = new int[playerCount];
+        // Shows dices on GUI
         gui.setDice(dices[0], dices[1]);
-        System.out.println(dices);
-
+        System.out.println(Arrays.toString(dices));
+        // Specific game rules. Class not made as all sub-classses is in use here. As such it would make no sense.
         while (true){
+            // Extra-assignment 3
             if (dices[0] == 6 && dices[1] == 6 && pdices[0] == 6 && pdices[1] == 6){
                 System.out.println(currentPlayers[turn.currentTurn()] + " has won the game, congrats!");
                 break;
             }
+            // extra-assignment 4
             else if (scoreBoard.score[turn.currentTurn()] >= 40 && dices[0] == dices[1]){
                 System.out.println(currentPlayers[turn.currentTurn()] + " has won the game, congrats!");
                 break;
             }
-            else if (pdices[0] == pdices[1] && diceThrow.getDices() == 0){
+            // extra-assignment 1
+            else if (dices[0] == dices[1] && diceThrow.getDices()[0] + diceThrow.getDices()[1] == 2){
                 System.out.println("Sorry, you lost all of your points :(");
                 scoreBoard.score[turn.currentTurn()] = 0;
             }
-            else if (pdices[0] == pdices[1]){
+            // extra-assignment 2
+            else if (dices[0] == dices[1]){
                 System.out.println("Congrats, you got an extra turn!");
+                turn.setPrevTurn();
             }
+            // primary assignment
             else {
-                scoreBoard.score[turn.currentTurn()] += diceThrow.getDices();
+                scoreBoard.score[turn.currentTurn()] += diceThrow.getDices()[0] + diceThrow.getDices()[1];
             }
+            gui.showMessage(currentPlayers[turn.currentTurn()] + "'s dices on the board. Click ok for next player");
+            diceThrow.setTurn(turn.currentTurn());diceThrow.pdice1();diceThrow.pdice2();diceThrow.setDices();turn.nextTurn();
+            gui.setDice(dices[0],dices[1]);
+            System.out.println(Arrays.toString(dices));
+
         }
     }
 }

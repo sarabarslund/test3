@@ -7,7 +7,6 @@
     <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="fucking aroundv2...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
       <workItem from="1664138215098" duration="17000" />
       <workItem from="1664150162819" duration="145000" />
       <workItem from="1664229765116" duration="25082000" />
-      <workItem from="1664464144129" duration="10981000" />
+      <workItem from="1664464144129" duration="20827000" />
     </task>
     <task id="LOCAL-00001" summary="fucking around...">
       <created>1664225968485</created>
@@ -81,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664229685831</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fucking aroundv2...">
+      <created>1664477405213</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664477405213</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
