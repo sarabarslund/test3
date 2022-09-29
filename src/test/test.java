@@ -27,15 +27,15 @@ class turn {
 
 public class test {
     public static void main(String[] args) {
-        turn tur = new turn();
-        System.out.println(tur.currentTurn(2));
-        System.out.println(tur.currentTurn(2));
-        System.out.println(tur.currentTurn(2));
 
 
 
-        int[] pdice1 = {2,3,4};
-        pdice1[0] = 3;
+        int throwDice1 = new Random().nextInt(1, 7);
+        int throwDice2 = new Random().nextInt(1, 7);
+        int dices = throwDice1 + throwDice2;
+
+        System.out.println(throwDice1 +" | " + throwDice2 + " | " + dices);
+
         }
     }
 
