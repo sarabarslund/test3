@@ -93,9 +93,6 @@ public class Main {
             }
             //regnskab
             long end2 = System.currentTimeMillis();
-            System.out.println("It took: " + (end - start) + " ms to show the dice on the board!");
-            System.out.println("It took: " + (end2 - start) + " ms to throw the dice and finish all the checks");
-            System.out.println("It took: " + (end2 - end3) + " ms to throw the dice and finish all the checks");
             System.out.println("Player 1 currently has: " + player1 + " points. Player 2 currently have: " + player2 + " points");
         }
     }
