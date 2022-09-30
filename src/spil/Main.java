@@ -34,7 +34,7 @@ class diceThrow {
     private int[] dices = {new Random().nextInt(1, 7), new Random().nextInt(1,7)};
     private int[] pdices1 = new int[playerCount];
     private int[] pdices2 = new int[playerCount];
-    void setpDices() {
+    void setPdices() {
         this.pdices1 = new int[playerCount];
         this.pdices2 = new int[playerCount];
     }
@@ -92,11 +92,8 @@ class turn {
 }
 // Saves scores
 class scoreBoard {
-    String[] scoreBoard;
     int[] score;
 }
-
-
 public class Main{
 
     public static void main(String[] args) {
@@ -108,6 +105,7 @@ public class Main{
         Scanner sc = new Scanner(System.in);
         scoreBoard scoreBoard = new scoreBoard();
 
+
         // Setting player count and names
         System.out.print("Welcome, please enter the amount of players at the table: ");
         int playerCount = sc.nextInt();
@@ -115,7 +113,7 @@ public class Main{
         // Sets the number of players in relevant classes.
         String[] currentPlayers = players.playerNames(playerCount);
         turn.setPlayerCount(playerCount);
-        diceThrow.setPlayerCount(playerCount);diceThrow.setpDices();
+        diceThrow.setPlayerCount(playerCount);diceThrow.setPdices();
         scoreBoard.score = new int[playerCount];
         // Choose player to start the game
         System.out.println("Thank you, scores will show up in console. Dices on gui.");
@@ -170,8 +168,12 @@ public class Main{
             System.out.println(Arrays.toString(diceThrow.pdice1()));
             System.out.println(Arrays.toString(diceThrow.pdice2()));
             System.out.println(turn.currentTurn());
+
             gui.showMessage(currentPlayers[turn.currentTurn()] + "'s dices on the board. Click ok for next player");
-            diceThrow.setTurn(turn.nextTurn());diceThrow.setTurn(turn.currentTurn());diceThrow.setDices();
+
+            diceThrow.setTurn(turn.nextTurn());diceThrow.setDices();
+
+
             gui.setDice(dices[0],dices[1]);
             System.out.println();
 
@@ -179,3 +181,4 @@ public class Main{
         }
     }
 }
+
