@@ -124,11 +124,11 @@ public class Main{
         sc.nextLine();
         sc.nextLine();
 
-        diceThrow.setTurn(turn.currentTurn());
         // Setup the GUI
         GUI gui = new GUI();
         gui.showMessage(currentPlayers[turn.currentTurn()] + " press 'OK' to throw the dice");
         // Throws the dices for the first time and saves pdices as a variable
+        diceThrow.setTurn(turn.currentTurn());
         diceThrow.setDices();
         int[] dices = diceThrow.getDices();
         int[] pdices = new int[playerCount];
@@ -169,9 +169,11 @@ public class Main{
             //Tests
             System.out.println(Arrays.toString(diceThrow.pdice1()));
             System.out.println(Arrays.toString(diceThrow.pdice2()));
+            System.out.println(turn.currentTurn());
             gui.showMessage(currentPlayers[turn.currentTurn()] + "'s dices on the board. Click ok for next player");
-            diceThrow.setTurn(turn.currentTurn());diceThrow.setDices();turn.nextTurn();
+            diceThrow.setTurn(turn.nextTurn());diceThrow.setTurn(turn.currentTurn());diceThrow.setDices();
             gui.setDice(dices[0],dices[1]);
+            System.out.println();
 
 
         }
