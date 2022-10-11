@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up...">
+    <list default="true" id="80b00dee-3ce2-4328-b671-16460d0673fc" name="Changes" comment="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up...v2">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_15_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_15_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_00_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_16_00__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_18_57_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_09_2022_18_57__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spil/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,22 @@
       <workItem from="1664138215098" duration="17000" />
       <workItem from="1664150162819" duration="145000" />
       <workItem from="1664229765116" duration="25082000" />
-      <workItem from="1664464144129" duration="32063000" />
+      <workItem from="1664464144129" duration="32098000" />
+      <workItem from="1665076839995" duration="1145000" />
+      <workItem from="1665080181333" duration="34000" />
+      <workItem from="1665085319699" duration="44000" />
+      <workItem from="1665130559356" duration="1194000" />
+      <workItem from="1665139836394" duration="13000" />
+      <workItem from="1665139873495" duration="14000" />
+      <workItem from="1665140099907" duration="710000" />
+      <workItem from="1665142418330" duration="129000" />
+      <workItem from="1665148681763" duration="624000" />
+      <workItem from="1665340958903" duration="22000" />
+      <workItem from="1665341849418" duration="27000" />
+      <workItem from="1665354074425" duration="21000" />
+      <workItem from="1665354120115" duration="98000" />
+      <workItem from="1665354237351" duration="15000" />
+      <workItem from="1665411973014" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="fucking around...">
       <created>1664225968485</created>
@@ -116,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664524780696</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up...v2">
+      <created>1664534292419</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664534292419</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +165,7 @@
     <MESSAGE value="So close.." />
     <MESSAGE value="works... knda" />
     <MESSAGE value="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up..." />
-    <option name="LAST_COMMIT_MESSAGE" value="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up..." />
+    <MESSAGE value="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up...v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="it most likely works. More testing should be done. Limits should be set up. Error handling should be set up...v2" />
   </component>
 </project>
